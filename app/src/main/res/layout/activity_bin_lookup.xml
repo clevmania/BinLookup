@@ -4,17 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhite"
     tools:context=".ui.BinLookUpActivity">
-
-    <TextView
-        android:id="@+id/tvCardNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etCardNumber"
@@ -26,8 +17,142 @@
         android:ems="10"
         android:maxLength="11"
         android:inputType="phone"
+        android:fontFamily="@font/source_sans_pro_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCardSchemeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/source_sans_pro_semi_bold"
+        android:text="@string/card_scheme"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintStart_toStartOf="@+id/etCardNumber"
+        app:layout_constraintTop_toBottomOf="@+id/etCardNumber" />
+
+    <TextView
+        android:id="@+id/tvCardScheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintStart_toStartOf="@+id/tvCardSchemeLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvCardSchemeLabel"
+        tools:text="American Express" />
+
+    <TextView
+        android:id="@+id/tvCardTypeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/source_sans_pro_semi_bold"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintStart_toStartOf="@+id/tvCardScheme"
+        app:layout_constraintTop_toBottomOf="@+id/tvCardScheme"
+        android:text="@string/card_type" />
+
+    <TextView
+        android:id="@+id/tvCardType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintStart_toStartOf="@+id/tvCardTypeLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvCardTypeLabel"
+        tools:text="Debit" />
+
+    <TextView
+        android:id="@+id/tvBankLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/source_sans_pro_semi_bold"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintStart_toStartOf="@+id/tvCardType"
+        app:layout_constraintTop_toBottomOf="@+id/tvCardType"
+        android:text="@string/bank" />
+
+    <TextView
+        android:id="@+id/tvBank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintStart_toStartOf="@+id/tvBankLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvBankLabel"
+        tools:text="Central Bank of Spain" />
+
+    <TextView
+        android:id="@+id/tvCountryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/country"
+        android:fontFamily="@font/source_sans_pro_semi_bold"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintStart_toStartOf="@+id/tvBank"
+        app:layout_constraintTop_toBottomOf="@+id/tvBank" />
+
+    <TextView
+        android:id="@+id/tvCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintStart_toStartOf="@+id/tvCountryLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvCountryLabel"
+        tools:text="Germany" />
+
+    <TextView
+        android:id="@+id/tvCardLengthLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/card_number_length"
+        android:fontFamily="@font/source_sans_pro_semi_bold"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintStart_toStartOf="@+id/tvCountry"
+        app:layout_constraintTop_toBottomOf="@+id/tvCountry" />
+
+    <TextView
+        android:id="@+id/tvCardLength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        tools:text="16"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintStart_toStartOf="@+id/tvCardLengthLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvCardLengthLabel" />
+
+    <TextView
+        android:id="@+id/tvPrepaidPostPaidLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/prepaid_or_postpaid"
+        android:fontFamily="@font/source_sans_pro_semi_bold"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintStart_toStartOf="@+id/tvCardLength"
+        app:layout_constraintTop_toBottomOf="@+id/tvCardLength" />
+
+    <TextView
+        android:id="@+id/tvPrepaidPostPaid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:lineSpacingExtra="4dp"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintStart_toStartOf="@+id/tvPrepaidPostPaidLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrepaidPostPaidLabel"
+        tools:text="Prepaid" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

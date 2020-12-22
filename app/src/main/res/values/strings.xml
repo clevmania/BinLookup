@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BinLookup</string>
+    <string name="card_scheme">Card Scheme</string>
+    <string name="card_type">Card Type</string>
+    <string name="bank">Bank</string>
+    <string name="country">Country</string>
+    <string name="card_number_length">Card Number Length</string>
+    <string name="prepaid_or_postpaid">Prepaid OR Postpaid</string>
 </resources>
