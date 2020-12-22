@@ -6,4 +6,7 @@
     <string name="country">Country</string>
     <string name="card_number_length">Card Number Length</string>
     <string name="prepaid_or_postpaid">Prepaid OR Postpaid</string>
+    <string name="card_country">%s %s</string>
+    <string name="prepaid">Prepaid</string>
+    <string name="postpaid">Postpaid</string>
 </resources>
