@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.clevmania.binlookup.data.CardBinDataSource
 import com.clevmania.binlookup.model.CardBinModel
 import com.clevmania.binlookup.utils.EventUtils
+import com.clevmania.binlookup.utils.toErrorMessage
 import kotlinx.coroutines.launch
 import java.lang.Exception
 import javax.inject.Inject
@@ -34,7 +35,7 @@ class BinViewModel @Inject constructor(
                 val response = cardBinDataSource.lookup(cardNo)
                 _cardDetails.value = EventUtils(response)
             }catch (ex: Exception){
-                _error.value = EventUtils(ex.message!!)
+                _error.value = EventUtils(ex.toErrorMessage())
             }finally {
                 _progress.value = EventUtils(false)
             }
