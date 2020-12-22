@@ -155,4 +155,19 @@
         app:layout_constraintTop_toBottomOf="@+id/tvPrepaidPostPaidLabel"
         tools:text="Prepaid" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lookUpProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="cards.json"
+        app:lottie_loop="true" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

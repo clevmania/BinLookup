@@ -8,6 +8,7 @@ import com.clevmania.binlookup.model.CardBinModel
 import com.clevmania.binlookup.utils.CardFormatter
 import com.clevmania.binlookup.utils.EventObserver
 import com.clevmania.binlookup.utils.afterTextChanged
+import com.clevmania.binlookup.utils.toggleProgress
 import kotlinx.android.synthetic.main.activity_bin_lookup.*
 import javax.inject.Inject
 
@@ -30,7 +31,7 @@ class BinLookUpActivity : AppCompatActivity() {
 
         with(binViewModel){
             progress.observe(this@BinLookUpActivity, EventObserver {
-                // toggle progress
+                lookUpProgress.toggleProgress(it)
             })
 
             error.observe(this@BinLookUpActivity, EventObserver {

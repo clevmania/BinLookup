@@ -4,7 +4,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.EditText
-import android.widget.ProgressBar
+import com.airbnb.lottie.LottieAnimationView
 
 /**
  * @author by Lawrence on 12/22/20.
@@ -19,7 +19,7 @@ fun View.makeGone(){ this.visibility = View.GONE
 
 fun View.makeInVisible() { this.visibility = View.INVISIBLE}
 
-fun ProgressBar.toggleProgress(it: Boolean) {
+fun LottieAnimationView.toggleProgress(it: Boolean) {
     if(it){ this.makeVisible() }
     else{ this.makeGone() }
 }
