@@ -1,11 +1,12 @@
-package com.clevmania.binlookup
+package com.clevmania.binlookup.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.clevmania.binlookup.R
 
-class MainActivity : AppCompatActivity() {
+class BinLookUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_bin_lookup)
     }
 }
