@@ -9,4 +9,6 @@
     <string name="card_country">%s %s</string>
     <string name="prepaid">Prepaid</string>
     <string name="postpaid">Postpaid</string>
+    <string name="error_title">Something Went Wrong</string>
+    <string name="first_6_to_9_digits">First 6 to 9 digits</string>
 </resources>

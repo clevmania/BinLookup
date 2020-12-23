@@ -1,7 +1,10 @@
 package com.clevmania.binlookup.ui
 
+import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.core.widget.doOnTextChanged
 import com.clevmania.binlookup.MyApp
 import com.clevmania.binlookup.R
 import com.clevmania.binlookup.model.CardBinModel
@@ -27,6 +30,7 @@ class BinLookUpActivity : AppCompatActivity() {
             if(number.length >= 7){
                 binViewModel.binLookup(number.replace(" ",""))
             }
+            if(number.length < 5) clear()
         }
 
         with(binViewModel){
@@ -35,7 +39,7 @@ class BinLookUpActivity : AppCompatActivity() {
             })
 
             error.observe(this@BinLookUpActivity, EventObserver {
-                // show error dialog
+                showErrorDialog(it)
             })
 
             cardDetails.observe(this@BinLookUpActivity, EventObserver {
@@ -45,13 +49,19 @@ class BinLookUpActivity : AppCompatActivity() {
     }
 
     private fun populateViews(cardDetails : CardBinModel){
+        clear()
         tvCardScheme.text = cardDetails.scheme
         tvCardType.text = cardDetails.type
         tvBank.text = cardDetails.bank.name
         tvCountry.text = getString(R.string.card_country,
             cardDetails.country.emoji, cardDetails.country.name)
-        tvCardLength.text  = cardDetails.number.length.toString()
+        tvCardLength.text = cardLength(cardDetails.number.length)
         tvPrepaidPostPaid.text = cardPlan(cardDetails.prepaid)
+    }
+
+    private fun cardLength(length: Int): String?{
+        if (length == 0) return null
+        return length.toString()
     }
 
     private fun cardPlan(isPrepaid: Boolean): String {
@@ -60,5 +70,22 @@ class BinLookUpActivity : AppCompatActivity() {
         }else {
             getString(R.string.postpaid)
         }
+    }
+
+    private fun clear(){
+        tvCardScheme.text = null
+        tvCardType.text = null
+        tvBank.text = null
+        tvCountry.text = null
+        tvCardLength.text = null
+        tvPrepaidPostPaid.text = null
+    }
+
+    private fun showErrorDialog(message: String, title: String = getString(R.string.error_title)){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(title)
+        builder.setMessage(message)
+        builder.setPositiveButton("OK", null)
+        builder.create().show()
     }
 }

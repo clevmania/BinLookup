@@ -15,6 +15,9 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:ems="10"
+        android:hint="@string/first_6_to_9_digits"
+        android:drawablePadding="8dp"
+        android:drawableStart="@drawable/ic_credit_card"
         android:maxLength="11"
         android:inputType="phone"
         android:fontFamily="@font/source_sans_pro_regular"
@@ -79,11 +82,12 @@
 
     <TextView
         android:id="@+id/tvBank"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/source_sans_pro_regular"
         android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/etCardNumber"
         app:layout_constraintStart_toStartOf="@+id/tvBankLabel"
         app:layout_constraintTop_toBottomOf="@+id/tvBankLabel"
         tools:text="Central Bank of Spain" />
