@@ -21,6 +21,9 @@ fun Throwable.toErrorMessage(): String {
                 404 -> {
                     Constants.NO_MATCHING_CARD
                 }
+                429  -> {
+                    Constants.TOO_MANY_REQUEST
+                }
                 else -> {
                     return try {
                         val errorJsonString = response()?.errorBody()?.string()
